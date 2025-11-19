@@ -4,7 +4,7 @@
 
 ## ✨ 项目截图
 
- ![输入图片说明](image.png)
+<!-- Uploading "image.png"... -->
 
 ## 🚀 主要功能
 
