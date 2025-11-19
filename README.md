@@ -4,7 +4,8 @@
 
 ## ✨ 项目截图
 
-<!-- Uploading "image.png"... -->
+![Uploading 可视化.png…]()
+
 
 ## 🚀 主要功能
 
