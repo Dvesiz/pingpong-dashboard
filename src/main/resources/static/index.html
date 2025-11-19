@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>乒乓球国际赛事数据可视化</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/comon0.css">
+</head>
+<body>
+<!-- loading -->
+<div class="loading">
+    <div class="loadbox">
+        <img src="images/loading.gif"> 数据加载中...
+    </div>
+</div>
+
+<!-- 头部 -->
+<div class="head">
+    <h1>基于ECharts的可视化系统的设计与开发</h1>
+    <h2>----乒乓球国际赛事数据可视化分析</h2>
+    <div class="time" id="showTime"></div>
+</div>
+
+<!-- 主体 -->
+<div class="mainbox">
+    <ul class="clearfix">
+        <li>
+            <div class="boxall" style="height: calc(15% - .15rem)">
+                <ul class="row h100 row1">
+                    <li class="col-4">
+                        <div class="bar1"><img src="images/icon1.png">
+                            <h3><span>赛事总数</span><i id="eventNum">0</i>个</h3>
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div class="bar1"><img src="images/icon4.png">
+                            <h3><span>运动员人数</span><i id="playerNum">0</i>人</h3>
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div class="bar1"><img src="images/icon5.png">
+                            <h3><span>国家/地区</span><i id="countryNum">0</i>个</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="boxall" style="height: calc(43% - .15rem)">
+                <div class="alltitle">赛事级别分布</div>
+                <div class="boxnav" id="echarts4"></div>
+            </div>
+
+            <div class="boxall" style="height: calc(42% - .15rem)">
+                <div class="alltitle">每月比赛场次</div>
+                <div class="boxnav" id="echarts2"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="boxall" style="height: calc(20% - .15rem)">
+                <ul class="row h100 clearfix">
+                    <li class="col-6">
+                        <div class="sqzs h100">
+                            <p>金牌总数</p>
+                            <h1 id="goldSum">0</h1>
+                        </div>
+                    </li>
+                    <li class="col-6">
+                        <ul class="row h100 clearfix">
+                            <li class="col-4"></li>
+                            <li class="col-4">
+                                <div class="tit01">男女比例</div>
+                                <div class="piebox" id="pe01"></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="boxall" style="height: calc(78% - 0%)">
+                <div class="alltitle">运动员籍贯分布</div>
+                <div class="boxnav h100" id="echarts1"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="boxall" style="height: calc(15% - .15rem)">
+                <ul class="row h100 row1">
+                    <li class="col-4">
+                        <div class="bar1 bar2"><img src="images/icon7.png">
+                            <h3><span>比赛总场次</span><i id="matchNum">0</i>场</h3>
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div class="bar1 bar2"><img src="images/icon8.png">
+                            <h3><span>本月场次</span><i id="monthNum">0</i>场</h3>
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div class="bar1 bar2"><img src="images/icon9.png">
+                            <h3><span>场均得分</span><i id="avgScore">0</i>分</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="boxall" style="height: calc(43% - .15rem)">
+                <div class="alltitle">国家金牌榜</div>
+                <div class="boxnav" id="lastecharts"></div>
+            </div>
+
+
+            <div class="boxall" style="height: calc(42% - .15rem)">
+                <div class="alltitle">胜率排行榜</div>
+                <div class="boxnav paim">
+                    <ul id="winRateList"></ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- 时间滚动 -->
+<script>
+    var t = null;
+    function time() {
+        clearTimeout(t);
+        var dt = new Date();
+        var y = dt.getFullYear();
+        var mt = dt.getMonth() + 1;
+        var day = dt.getDate();
+        var h = dt.getHours();
+        var m = dt.getMinutes();
+        var s = dt.getSeconds();
+        document.getElementById("showTime").innerHTML =
+            y + "年" + (mt < 10 ? "0" + mt : mt) + "月" + (day < 10 ? "0" + day : day) + "日" +
+            (h < 10 ? "0" + h : h) + "时" + (m < 10 ? "0" + m : m) + "分" + (s < 10 ? "0" + s : s) + "秒";
+        t = setTimeout(time, 1000);
+    }
+    time();
+</script>
+
+<!-- 图表脚本 -->
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/pingpong.js?v=2"></script>
+</body>
+</html>
