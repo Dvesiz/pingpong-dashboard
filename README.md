@@ -4,7 +4,8 @@
 
 ## ✨ 项目截图
 
-![image-20251119091229473](C:\Users\ASUS4\AppData\Roaming\Typora\typora-user-images\image-20251119091229473.png) 
+![Uploading image.png…]()
+
 
 ## 🚀 主要功能
 
