@@ -4,7 +4,9 @@
 
 ## ✨ 项目截图
 
-[可视化.png](https://github.com/Dvesiz/pingpong-dashboard/blob/main/%E5%8F%AF%E8%A7%86%E5%8C%96.png)
+<p align="center">
+  <img src="https://github.com/Dvesiz/pingpong-dashboard/blob/main/可视化.png" alt="项目截图" width="80%">
+</p>
 
 
 ## 🚀 主要功能
